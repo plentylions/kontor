@@ -15,13 +15,5 @@
     "categories"        :   [3518],
     "type"              :   "theme",
     "require"           :   ["Ceres"],
-    "serviceProvider"   :   "Kontor\\Providers\\KontorServiceProvider",
-    "dataProviders"     :
-    [
-        {
-            "key"           :"Kontor\\Containers\\KontorContainer",
-            "name"          :"Stylesheet",
-            "description"   :"Add changes to the CSS file"
-        }
-    ]
+    "serviceProvider"   :   "Kontor\\Providers\\KontorServiceProvider"
 }

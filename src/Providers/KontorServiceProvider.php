@@ -6,6 +6,7 @@ use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\Templates\Twig;
 use IO\Helper\TemplateContainer;
+use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ConfigRepository;
 
@@ -33,8 +34,10 @@ class KontorServiceProvider extends ServiceProvider
             $partial->set('footer', 'Ceres::PageDesign.Partials.Footer');
 
             $partial->set('footer', 'Kontor::PageDesign.Partials.Footer');
+        }, self::PRIORITY);
 
-            return false;
+        $dispatcher->listen('IO.Resources.Import', function (ResourceContainer $container) {
+            $container->addStyleTemplate('Kontor::Stylesheet');
         }, self::PRIORITY);
     }
 }
